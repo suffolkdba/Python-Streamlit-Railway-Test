@@ -1,4 +1,4 @@
-FROM python:3
+FROM python:3.11
 
 WORKDIR /usr/src/app
 
@@ -7,4 +7,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD [ "python", "./your-daemon-or-script.py" ]
+# Expose the port for Streamlit
+EXPOSE 8501
+
+CMD [ "python", "./Home.py" ]
